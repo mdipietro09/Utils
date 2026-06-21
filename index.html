@@ -160,7 +160,7 @@ const CITIES = [
   {
     type:'london', flag:'🇬🇧', city:'London', year:'2015 – 2016',
     color:'#3d5a80', sky:['#98c1d9','#5c7a99'],
-    role:'Wolters Kluwer', org:'Consultant · Tagetik Software',
+    role:'Consultant', org:'Wolters Kluwer · Tagetik Software',
     bullets:[
       'First client facing job - Corporate Finance and Private Equity.',
       'Started working with SQL Databases, Analytics, Machine Learning, and Python.',
@@ -171,7 +171,7 @@ const CITIES = [
   {
     type:'milan', flag:'🇮🇹', city:'Milan', year:'2017 – 2022',
     color:'#c44536', sky:['#f4a261','#e76f51'],
-    role:'Intesa Sanpaolo', org:'Data Scientist · Banking',
+    role:'Data Scientist', org:'Intesa Sanpaolo Bank',
     bullets:[
       'Moved back to Italy to join one of the largest banks in EU as a Full-Stack developer.',
       '5+ years of hands-on Machine Learning, AI engineering, end-to-end Data Science projects with production deployment.',
@@ -182,7 +182,7 @@ const CITIES = [
   { 
     type:'covid', flag:'🦠', city:'Lockdown', year:'2020', 
     color:'#555555', sky:['#2b2b2b','#4a4a4a'], 
-    role:'Remote Working', org:'Content Creator · Writer', 
+    role:'Content Creator & Writer', org:'Remote Working', 
     bullets:[
       'Started writing coding tutorial for TowardsDataScience - 50+ articles and top author on Medium.',
       'Co-founded Datapizza, generated engagement, built Italy tech community - 200k+ followers.', 
@@ -193,7 +193,7 @@ const CITIES = [
   {
     type:'hongkong', flag:'🇭🇰', city:'Hong Kong', year:'2022 – 2024',
     color:'#2a9d8f', sky:['#264653','#2a9d8f'],
-    role:'Intesa Sanpaolo', org:'Lead Data Scientist · Asia',
+    role:'Lead Data Scientist', org:'Intesa Sanpaolo · Asia',
     bullets:[
       'Relocated to lead digital transformation across Corporate Investment Banking branches.',
       'Worked with the CFO to apply AI and acted cross-functional (tech, compliance, business).',
@@ -204,7 +204,7 @@ const CITIES = [
   {
     type:'shanghai', flag:'🇨🇳', city:'Shanghai', year:'2024 – 2026',
     color:'#e63946', sky:['#1d3557','#457b9d'],
-    role:'Intesa Sanpaolo', org:'IT & Cybersecurity · China',
+    role:'IT & Cybersecurity', org:'Intesa Sanpaolo · China',
     bullets:[
       'Relocated to China to enhance cybersecurity using autonomous Agents - the only foreigner in a full-chinese team.',
       'Ensured strict adherence to AI governance, data privacy, legal & compliance.',
@@ -215,7 +215,7 @@ const CITIES = [
   {
     type:'istanbul', flag:'🇹🇷', city:'Istanbul', year:'2026 – Now',
     color:'#f4a261', sky:['#6d597a','#b56576'],
-    role:'Intesa Sanpaolo', org:'IT & Cybersecurity · Middle East',
+    role:'IT & Cybersecurity', org:'Intesa Sanpaolo · Middle East',
     bullets:[
       'Relocated to Middle East in the hottest time - war and terrorist attack right outside the office.',
       'Managing IT Infrastructure, hardware, security, disaster recovery.',
@@ -530,8 +530,8 @@ function drawWorld(){
     const reached = visited.has(i);
     ctx.fillStyle = reached ? 'rgba(78,205,196,.25)' : 'rgba(124,106,247,.22)';
     ctx.fillRect(sx-3, 0, 6, g);
-    // job title (first part of org), floating high in the sky above the buildings
-    const jobTitle = c.org.split('·')[0].trim();
+    // job title floating high in the sky above the buildings
+    const jobTitle = c.role;
     const jy = g*0.4;   // mid-sky, above the buildings
     ctx.textAlign='center';
     ctx.font='28px serif';
