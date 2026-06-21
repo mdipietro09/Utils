@@ -159,7 +159,7 @@ const CITIES = [
       'Started working with SQL Databases, Analytics, Machine Learning, and Python.',
       'Learned customer management, enterprise software, professional English.'
     ],
-    tags:['English','Programming','Data Science']
+    tags:['Finance','Programming','Data Science']
   },
   {
     type:'milan', flag:'🇮🇹', city:'Milan', year:'2017 – 2022',
@@ -171,6 +171,17 @@ const CITIES = [
       'From Junior to Team Leader, led strategic sensitive projects, reported to CEO team.'
     ],
     tags:['Team Management','AI Engineering','End-to-End Delivery']
+  },
+  { 
+    type:'covid', flag:'🦠', city:'Lockdown', year:'2020', 
+    color:'#555555', sky:['#2b2b2b','#4a4a4a'], 
+    role:'Remote Working', org:'Content Creator · Writer', 
+    bullets:[
+      'Started writing coding tutorial for TowardsDataScience - 50+ articles and top author on Medium.',
+      'Co-founded Datapizza, generated engagement, built Italy tech community - 200k+ followers.', 
+      'Started coaching startups.'
+    ], 
+    tags:['Public speaking','Engagement','Technical writing'] 
   },
   {
     type:'hongkong', flag:'🇭🇰', city:'Hong Kong', year:'2022 – 2024',
@@ -325,6 +336,17 @@ function drawMilan(x, g){
   ctx.beginPath(); ctx.moveTo(cx-9,g-185); ctx.lineTo(cx+9,g-185); ctx.lineTo(cx,g-250); ctx.closePath(); ctx.fill();
   ctx.fillStyle='#f4d35e'; ctx.beginPath(); ctx.arc(cx,g-254,4,0,7); ctx.fill();
 }
+function drawCovid(x, g){ 
+  const cx=x; 
+  ctx.fillStyle='#3a2e28'; 
+  ctx.fillRect(cx-40,g-70,80,70); 
+  ctx.fillStyle = '#c44536'; 
+  ctx.beginPath(); ctx.moveTo(cx-50,g-70); ctx.lineTo(cx+50,g-70); ctx.lineTo(cx,g-110); ctx.closePath(); ctx.fill(); 
+  ctx.fillStyle='#87ceeb'; ctx.fillRect(cx-15,g-45,30,25); 
+  ctx.save(); 
+  ctx.translate(cx,g-30); ctx.scale(0.4,0.4); drawAvatar(ctx, playerGender || 'female', 0, 46); 
+  ctx.restore(); 
+}
 function drawHongKong(x,g){
   // dense skyline of glass towers + a peak behind
   const cols=['#1f6f6a','#26867f','#155e59','#2a9d8f'];
@@ -391,7 +413,7 @@ function drawIstanbul(x,g){
     ctx.lineTo(cx+off,g-205); ctx.closePath(); ctx.fill();
   });
 }
-const LANDMARKS = {london:drawLondon, milan:drawMilan, hongkong:drawHongKong, shanghai:drawShanghai, istanbul:drawIstanbul};
+const LANDMARKS = {london:drawLondon, milan:drawMilan, covid:drawCovid, hongkong:drawHongKong, shanghai:drawShanghai, istanbul:drawIstanbul};
 
 // ── Avatar sprite (reusable: in-game + intro previews) ──
 // Draws an avatar centred at the current origin, feet at +h/2.
